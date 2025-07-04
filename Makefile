@@ -4,7 +4,7 @@ OBJS=$(SRCS:.c=.o)
 NAME=./src/js/jabcodeJSLib.js
 WP_NAME=./dist/jabcodeJSLib.min.js
 
-ifeq (${EMSCRIPTEN_ROOT},undefined)
+ifndef EMSCRIPTEN_ROOT
 	EMCC=emcc
 else
 	EMCC=${EMSCRIPTEN_ROOT}/emcc
